@@ -14,6 +14,7 @@ from __future__ import print_function
 
 import os
 import time
+from getpass import getpass
 from pprint import pprint
 
 import zmq
@@ -818,7 +819,7 @@ class Client(object):
         """Pull objects from `target`'s namespace by `keys`"""
         if isinstance(keys, str):
             pass
-        elif isistance(keys, (list,tuple,set)):
+        elif isinstance(keys, (list,tuple,set)):
             for key in keys:
                 if not isinstance(key, str):
                     raise TypeError
